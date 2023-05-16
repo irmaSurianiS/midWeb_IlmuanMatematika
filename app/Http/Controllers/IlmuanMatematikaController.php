@@ -42,9 +42,10 @@ class IlmuanMatematikaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(IlmuanMatematika $ilmuanMatematika)
+    public function show(IlmuanMatematika $ilmuanMatematika, $id)
     {
-        //
+        $ilmuan = IlmuanMatematika::where("id", $id)->first();
+        return view("ilmuan.show", ["ilmuan" => $ilmuan]);
     }
 
     /**
